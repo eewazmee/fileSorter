@@ -1,11 +1,9 @@
 from pathlib import Path
 import shutil
 
-toSort = '/home/samir/Downloads/toSort/'
-
 
 def file_sorter(path: str = str()):
-    entries = Path(toSort)
+    entries = Path(path)
     if entries.exists():
         # print('this folder exists')
         for file in entries.iterdir():
@@ -27,5 +25,3 @@ def file_sorter(path: str = str()):
             elif file.name.endswith('.pdf'):
                 shutil.move(file_path, '/home/samir/Documents')
 
-
-file_sorter(toSort)
